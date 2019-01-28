@@ -3,20 +3,14 @@
 clc
 clf
 clear all
-N0 = 50; 
-Nvec(1) = N0; 
-dt = 0.01; 
-T = 0.9;
-t = 1000; 
-for i = 1:t
-    
-    Ndot = AlleeGrowth(T,Nvec,dt); 
-    Nvec(i+1) = Nvec(i)+Ndot*dt; 
-    
-end
+N0 = 50;  
+dt = 0.1; 
+timeSteps = 100/dt; 
+
+Nvec = populationProgression(dt, T, timeSteps, N0); 
 
 Nshift = circshift(Nvec,-1); 
-timeVec = linspace(0, t*dt, numel(Nvec)); 
+timeVec = linspace(0, timeSteps*dt, numel(Nvec)); 
 plot(timeVec, Nvec);
 ylim([N0 max(Nvec)+5])
 xlim([0 numel(Nvec)*dt])
