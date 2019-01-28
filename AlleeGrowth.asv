@@ -1,0 +1,14 @@
+function Ndot = AlleeGrowth(T,Nvec,dt)
+
+r = 0.1; 
+A = 20; 
+K = 100;  
+if (T/dt > numel(Nvec)) 
+    Tao = 1; 
+else
+    Tao = numel(Nvec)-T/dt+1; 
+end
+% a = n*Nvec(end); 
+% b = 1-Nvec
+Ndot = r*Nvec(end)*(1-(Nvec(Tao)/K))*(Nvec(end)/A-1); 
+end
