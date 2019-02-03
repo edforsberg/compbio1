@@ -6,9 +6,9 @@ clear all
 
 
 N0 = 50;  
-dt = 0.1; 
-timeSteps = 100/dt; 
-T = 4.6;
+dt = 0.01; 
+timeSteps = 1000; 
+T = 0.5;
 
 Nvec = populationProgression(dt, T, timeSteps, N0); 
 
