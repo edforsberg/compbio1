@@ -3,7 +3,7 @@ clc
 clf
 clear all 
 
-timeSteps = 1000; 
+timeSteps = 100; 
 pertVec = [-10,-3,-2,-1,1,2,3,10];
 K = 1E3; 
 r = 0.1;
@@ -25,18 +25,17 @@ end
 end
 T = 1:timeSteps; 
 
-yMin = min(min([N Nlin]));
-yMax = max(max([N Nlin])); 
-for p = 1:4
+
+for p = 5:8
 subplot(2,2,p)
-loglog(T,N(:,p)); 
+semilogx(T,N(:,p)); 
 hold on 
-loglog(T,Nlin(:,p)); 
-legend({'exact','linearisation'},'Location','northwest')
+semilogx(T,Nlin(:,p)); 
+legend({'exact','linearisation'},'Location','northeast')
 xlabel('t') 
 ylabel('N(t)')
-xlim([min(T) max(T)])
-ylim([yMin(-1 yMax+1])
+xlim([min(T) max(T)]); 
+ylim([min(min([N(:,p) Nlin(:,p)]))-1 max(max([N(:,p) Nlin(:,p)]))+1]);
 title(sprintf('Population growth, N0 = %g',N0vec(p))); 
 end
 

@@ -31,7 +31,7 @@ subplot(2,2,p)
 semilogx(T,N(:,p)); 
 hold on 
 semilogx(T,Nlin(:,p)); 
-legend({'exact','linearisation'},'Location','southeast')
+legend({'exact','linearisation'},'Location','northeast')
 xlabel('t') 
 ylabel('N(t)')
 xlim([min(T) max(T)]); 
