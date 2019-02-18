@@ -15,5 +15,4 @@ b = 1-Nvec(Tao)/K;
 
 c = Nvec(end)/A-1; 
 Ndot = a*b*c;
-% Ndot = r*Nvec(end)*(1-(Nvec(Tao)/K))*(Nvec(end)/A-1); 
 end

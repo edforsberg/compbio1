@@ -1,9 +1,0 @@
-function Nlinear = LinearStability(N, Nstar)
-
-K = 1E3; 
-r = 0.1; 
-b = 1; 
-
-Nlinear = N+(; 
-
-end
